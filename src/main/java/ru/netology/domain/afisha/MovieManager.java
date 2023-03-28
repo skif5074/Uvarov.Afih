@@ -1,8 +1,8 @@
-package ru.netology;
+package ru.netology.domain.afisha;
 
 public class MovieManager {
-    private Movie[] movies = new Movie[0];
-    private Movie[] moviesReverse = new Movie[0];
+    private MovieData[] movies = new MovieData[0];
+    private MovieData[] moviesReverse = new MovieData[0];
     private int countMovies = 10;//счетчик кол-ва выводимых фильмов для метода findLast
 
     public MovieManager() {
@@ -12,19 +12,19 @@ public class MovieManager {
         this.countMovies = countMovies;
     }
 
-    public Movie[] getMovies() {
+    public MovieData[] getMovies() {
         return movies;
     }
 
-    public void setMovies(Movie[] movies) {
+    public void setMovies(MovieData[] movies) {
         this.movies = movies;
     }
 
-    public Movie[] getMoviesReverse() {
+    public MovieData[] getMoviesReverse() {
         return moviesReverse;
     }
 
-    public void setMoviesReverse(Movie[] moviesReverse) {
+    public void setMoviesReverse(MovieData[] moviesReverse) {
         this.moviesReverse = moviesReverse;
     }
 
@@ -37,8 +37,8 @@ public class MovieManager {
     }
 
     //добавление фильма в конец массива
-    public void add(Movie movie) {
-        Movie[] tmp = new Movie[movies.length + 1];
+    public void add(MovieData movie) {
+        MovieData[] tmp = new MovieData[movies.length + 1];
         for (int i = 0; i < movies.length; i++) {
             tmp[i] = movies[i];
         }
@@ -56,7 +56,7 @@ public class MovieManager {
         if (countMovies > movies.length) { //проверка, что n не больше нашего массива с фильмами
             countMovies = movies.length;
         }
-        Movie[] tmp = new Movie[countMovies];
+        MovieData[] tmp = new MovieData[countMovies];
         for (int i = 0, j = movies.length - 1; i < countMovies; i++, j--) {
             tmp[i] = movies[j];
         }

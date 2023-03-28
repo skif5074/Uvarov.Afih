@@ -1,4 +1,4 @@
-package ru.netology;
+package ru.netology.domain.afisha;
 
 import org.junit.jupiter.api.Test;
 
@@ -6,33 +6,33 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 class MovieManagerTest {
 
-    Movie movieOne = new Movie(1, "One");
-    Movie movieTwo = new Movie(2, "Two");
-    Movie movieThree = new Movie(3, "Three");
-    Movie movieFour = new Movie(4, "Four");
-    Movie movieFive = new Movie(5, "Five");
-    Movie movieSix = new Movie(6, "Six");
-    Movie movieSeven = new Movie(7, "Seven");
-    Movie movieEight = new Movie(8, "Eight");
-    Movie movieNine = new Movie(9, "Nine");
-    Movie movieTen = new Movie(10, "Ten");
-    Movie movieEleven = new Movie(11, "Eleven");
-    Movie movieTwelve = new Movie(12, "Twelve");
-    Movie movieThirteen = new Movie(13, "Thirteen");
-    Movie movieFourteen = new Movie(14, "Fourteen");
-    Movie movieFifteen = new Movie(15, "Fifteen");
-    Movie movieSixteen = new Movie(16, "Sixteen");
+    MovieData movieOne = new MovieData(1, "One");
+    MovieData movieTwo = new MovieData(2, "Two");
+    MovieData movieThree = new MovieData(3, "Three");
+    MovieData movieFour = new MovieData(4, "Four");
+    MovieData movieFive = new MovieData(5, "Five");
+    MovieData movieSix = new MovieData(6, "Six");
+    MovieData movieSeven = new MovieData(7, "Seven");
+    MovieData movieEight = new MovieData(8, "Eight");
+    MovieData movieNine = new MovieData(9, "Nine");
+    MovieData movieTen = new MovieData(10, "Ten");
+    MovieData movieEleven = new MovieData(11, "Eleven");
+    MovieData movieTwelve = new MovieData(12, "Twelve");
+    MovieData movieThirteen = new MovieData(13, "Thirteen");
+    MovieData movieFourteen = new MovieData(14, "Fourteen");
+    MovieData movieFifteen = new MovieData(15, "Fifteen");
+    MovieData movieSixteen = new MovieData(16, "Sixteen");
 
-    Movie[] moviesTestList0 = new Movie[0];
-    Movie[] moviesTestList1 = {
+    MovieData[] moviesTestList0 = new MovieData[0];
+    MovieData[] moviesTestList1 = {
             movieOne};
-    Movie[] moviesTestList5 = {
+    MovieData[] moviesTestList5 = {
             movieOne,
             movieTwo,
             movieThree,
             movieFour,
             movieFive};
-    Movie[] moviesTestList15 = {
+    MovieData[] moviesTestList15 = {
             movieOne,
             movieTwo,
             movieThree,
@@ -49,19 +49,19 @@ class MovieManagerTest {
             movieFourteen,
             movieFifteen};
 
-    Movie[] moviesExpectedAdd0 = {
+    MovieData[] moviesExpectedAdd0 = {
             movieOne};
-    Movie[] moviesExpectedAdd1 = {
+    MovieData[] moviesExpectedAdd1 = {
             movieOne,
             movieTwo};
-    Movie[] moviesExpectedAdd5 = {
+    MovieData[] moviesExpectedAdd5 = {
             movieOne,
             movieTwo,
             movieThree,
             movieFour,
             movieFive,
             movieSix};
-    Movie[] moviesExpectedAdd15 = {
+    MovieData[] moviesExpectedAdd15 = {
             movieOne,
             movieTwo,
             movieThree,
@@ -79,16 +79,16 @@ class MovieManagerTest {
             movieFifteen,
             movieSixteen};
 
-    Movie[] moviesExpectedFindAll0 = new Movie[0];
-    Movie[] moviesExpectedFindAll1 = {
+    MovieData[] moviesExpectedFindAll0 = new MovieData[0];
+    MovieData[] moviesExpectedFindAll1 = {
             movieOne};
-    Movie[] moviesExpectedFindAll5 = {
+    MovieData[] moviesExpectedFindAll5 = {
             movieOne,
             movieTwo,
             movieThree,
             movieFour,
             movieFive};
-    Movie[] moviesExpectedFindAll15 = {
+    MovieData[] moviesExpectedFindAll15 = {
             movieOne,
             movieTwo,
             movieThree,
@@ -105,16 +105,16 @@ class MovieManagerTest {
             movieFourteen,
             movieFifteen};
 
-    Movie[] moviesExpectedFindLast0DefaultCount = new Movie[0];
-    Movie[] moviesExpectedFindLast1DefaultCount = {
+    MovieData[] moviesExpectedFindLast0DefaultCount = new MovieData[0];
+    MovieData[] moviesExpectedFindLast1DefaultCount = {
             movieOne};
-    Movie[] moviesExpectedFindLast5DefaultCount = {
+    MovieData[] moviesExpectedFindLast5DefaultCount = {
             movieFive,
             movieFour,
             movieThree,
             movieTwo,
             movieOne};
-    Movie[] moviesExpectedFindLast15DefaultCount = {
+    MovieData[] moviesExpectedFindLast15DefaultCount = {
             movieFifteen,
             movieFourteen,
             movieThirteen,
@@ -126,14 +126,14 @@ class MovieManagerTest {
             movieSeven,
             movieSix};
 
-    Movie[] moviesExpectedFindLast15Count0 = new Movie[0];
-    Movie[] moviesExpectedFindLast5Count7 = {
+    MovieData[] moviesExpectedFindLast15Count0 = new MovieData[0];
+    MovieData[] moviesExpectedFindLast5Count7 = {
             movieFive,
             movieFour,
             movieThree,
             movieTwo,
             movieOne};
-    Movie[] moviesExpectedFindLast15Count7 = {
+    MovieData[] moviesExpectedFindLast15Count7 = {
             movieFifteen,
             movieFourteen,
             movieThirteen,
@@ -148,7 +148,7 @@ class MovieManagerTest {
 
     @Test
     void shouldAddNullMovies() {
-        Movie[] expected = moviesExpectedAdd0;
+        MovieData[] expected = moviesExpectedAdd0;
         manager.setMovies(moviesTestList0);
         manager.add(movieOne);
         assertArrayEquals(expected, manager.getMovies());
@@ -156,7 +156,7 @@ class MovieManagerTest {
 
     @Test
     void shouldAddOneMovies() {
-        Movie[] expected = moviesExpectedAdd1;
+        MovieData[] expected = moviesExpectedAdd1;
         manager.setMovies(moviesTestList1);
         manager.add(movieTwo);
         assertArrayEquals(expected, manager.getMovies());
@@ -164,7 +164,7 @@ class MovieManagerTest {
 
     @Test
     void shouldAddFiveMovies() {
-        Movie[] expected = moviesExpectedAdd5;
+        MovieData[] expected = moviesExpectedAdd5;
         manager.setMovies(moviesTestList5);
         manager.add(movieSix);
         assertArrayEquals(expected, manager.getMovies());
@@ -172,7 +172,7 @@ class MovieManagerTest {
 
     @Test
     void shouldAddFifteenMovies() {
-        Movie[] expected = moviesExpectedAdd15;
+        MovieData[] expected = moviesExpectedAdd15;
         manager.setMovies(moviesTestList15);
         manager.add(movieSixteen);
         assertArrayEquals(expected, manager.getMovies());
@@ -180,7 +180,7 @@ class MovieManagerTest {
 
     @Test
     void shouldFindAllNullMovies() {
-        Movie[] expected = moviesExpectedFindAll0;
+        MovieData[] expected = moviesExpectedFindAll0;
         manager.setMovies(moviesTestList0);
         manager.findAll();
         assertArrayEquals(expected, manager.getMovies());
@@ -188,7 +188,7 @@ class MovieManagerTest {
 
     @Test
     void shouldFindAllOneMovies() {
-        Movie[] expected = moviesExpectedFindAll1;
+        MovieData[] expected = moviesExpectedFindAll1;
         manager.setMovies(moviesTestList1);
         manager.findAll();
         assertArrayEquals(expected, manager.getMovies());
@@ -196,7 +196,7 @@ class MovieManagerTest {
 
     @Test
     void shouldFindAllFiveMovies() {
-        Movie[] expected = moviesExpectedFindAll5;
+        MovieData[] expected = moviesExpectedFindAll5;
         manager.setMovies(moviesTestList5);
         manager.findAll();
         assertArrayEquals(expected, manager.getMovies());
@@ -204,7 +204,7 @@ class MovieManagerTest {
 
     @Test
     void shouldFindAllFifteenMovies() {
-        Movie[] expected = moviesExpectedFindAll15;
+        MovieData[] expected = moviesExpectedFindAll15;
         manager.setMovies(moviesTestList15);
         manager.findAll();
         assertArrayEquals(expected, manager.getMovies());
@@ -212,7 +212,7 @@ class MovieManagerTest {
 
     @Test
     void shouldFindLastNullMoviesDefaultCount() {
-        Movie[] expected = moviesExpectedFindLast0DefaultCount;
+        MovieData[] expected = moviesExpectedFindLast0DefaultCount;
         manager.setMovies(moviesTestList0);
         manager.findLast();
         assertArrayEquals(expected, manager.getMoviesReverse());
@@ -220,7 +220,7 @@ class MovieManagerTest {
 
     @Test
     void shouldFindLastOneMoviesDefaultCount() {
-        Movie[] expected = moviesExpectedFindLast1DefaultCount;
+        MovieData[] expected = moviesExpectedFindLast1DefaultCount;
         manager.setMovies(moviesTestList1);
         manager.findLast();
         assertArrayEquals(expected, manager.getMoviesReverse());
@@ -228,7 +228,7 @@ class MovieManagerTest {
 
     @Test
     void shouldFindLastFiveMoviesDefaultCount() {
-        Movie[] expected = moviesExpectedFindLast5DefaultCount;
+        MovieData[] expected = moviesExpectedFindLast5DefaultCount;
         manager.setMovies(moviesTestList5);
         manager.findLast();
         assertArrayEquals(expected, manager.getMoviesReverse());
@@ -236,7 +236,7 @@ class MovieManagerTest {
 
     @Test
     void shouldFindLastFifteenMoviesDefaultCount() {
-        Movie[] expected = moviesExpectedFindLast15DefaultCount;
+        MovieData[] expected = moviesExpectedFindLast15DefaultCount;
         manager.setMovies(moviesTestList15);
         manager.findLast();
         assertArrayEquals(expected, manager.getMoviesReverse());
@@ -244,7 +244,7 @@ class MovieManagerTest {
 
     @Test
     void shouldFindLastFifteenMoviesCountNull() {
-        Movie[] expected = moviesExpectedFindLast15Count0;
+        MovieData[] expected = moviesExpectedFindLast15Count0;
         managerCountNull.setMovies(moviesTestList15);
         managerCountNull.findLast();
         assertArrayEquals(expected, managerCountNull.getMoviesReverse());
@@ -252,7 +252,7 @@ class MovieManagerTest {
 
     @Test
     void shouldFindLastFiveMoviesCountSeven() {
-        Movie[] expected = moviesExpectedFindLast5Count7;
+        MovieData[] expected = moviesExpectedFindLast5Count7;
         managerCountSeven.setMovies(moviesTestList5);
         managerCountSeven.findLast();
         assertArrayEquals(expected, managerCountSeven.getMoviesReverse());
@@ -260,7 +260,7 @@ class MovieManagerTest {
 
     @Test
     void shouldFindLastFifteenMoviesCountSeven() {
-        Movie[] expected = moviesExpectedFindLast15Count7;
+        MovieData[] expected = moviesExpectedFindLast15Count7;
         managerCountSeven.setMovies(moviesTestList15);
         managerCountSeven.findLast();
         assertArrayEquals(expected, managerCountSeven.getMoviesReverse());

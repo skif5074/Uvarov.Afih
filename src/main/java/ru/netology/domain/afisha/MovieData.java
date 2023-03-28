@@ -1,13 +1,13 @@
-package ru.netology;
+package ru.netology.domain.afisha;
 
-public class Movie {
+public class MovieData {
     private int id;
     private String movieName;
 
-    public Movie() {
+    public MovieData() {
     }
 
-    public Movie(int id, String movieName) {
+    public MovieData(int id, String movieName) {
         this.id = id;
         this.movieName = movieName;
     }
